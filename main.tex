@@ -1,0 +1,96 @@
+\documentclass[]{ctexbook}
+
+\usepackage[a4paper,left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{pdfpages}
+\usepackage{hyperref} 
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstset{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\fontsize{9}{11}\selectfont,  % 调整这里的字体大小和行高
+    numbers=left,
+    stepnumber=1,
+    numbersep=5pt,
+    abovecaptionskip=1em,
+    breaklines=true,  
+    breakatwhitespace=true,  
+    captionpos=b,  
+    keepspaces=true,  
+    showspaces=false,  
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+}
+
+\newcommand{\citebox}[1]{
+    \begin{center}
+    \begin{tcolorbox}[colback=gray!10,%gray background
+                      colframe=black,% black frame colour
+                      width=15cm,% Use 8cm total width,
+                      arc=1mm, auto outer arc,
+                      boxrule=0.5pt,
+                     ]
+    #1
+    \end{tcolorbox}
+    \end{center}
+}
+
+
+\title{COMPSCI 742 押题}
+\author{Bo Pang/庞礴}
+\date{Last Update: \today}
+
+\ctexset{
+	part = {
+		format+=\heiti
+	},
+    part/name = {第, 编},
+    part/number = {\Chinese{part}},
+    chapter/name = {Chapter},
+    chapter/number = { \arabic{chapter}},
+    chapter = {
+		format+=\heiti
+	},
+    section = {
+		format+=\heiti
+	},
+	subsection = {
+		format+=\heiti
+	},
+	subsubsection = {
+		format+=\heiti
+	},
+    paragraph = {
+		format+=\heiti
+	}
+}
+
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\part{网络测量}
+
+\include{chapters/InternetMeasurements.tex}
+
+\part{通信原理}
+
+\include{chapters/LinkBudget.tex}
+
+
+
+
+\end{document}

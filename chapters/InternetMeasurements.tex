@@ -1,0 +1,81 @@
+\chapter*{必读书目}
+
+\section{Web workload characterization}
+\section{Pinging in the rain}
+\section{Modern website complexity}
+\section{Comparative analysis of Web and P2P traffic}
+\section{Interference effects in Wi-Fi networks}
+
+
+\chapter{网络测量}
+
+\section{网络测量中的概念}
+
+互联网测量可根据网络监控器的位置（边缘网络与核心网络）、使用的测量/分析工具（基于硬件与基于软件）、探测机制（被动与主动）以及视点数量（单视点与多视点）进行分类。
+
+\subsection{了解主动与被动等测量方法，以及边缘与核心等有利位置}
+
+被动网络测量是通过监听通过路由器或主机的所有流量来进行的。主动测量包括生成从一台主机到另一台主机的特殊探测流量。探测流量可能包含几乎没有有效载荷的小型 UDP 数据包。
+
+注意，Google Analytics被视为主动测量
+
+\subsection{给定一个场景，确定测量方法和有利位置}
+在对WWW2007网站进行测量时，采用了被动测量和主动测量两种方法。
+
+因为本研究收集并分析了服务器端数据和客户端数据。在服务器端，数据是从服务器日志中收集的，而客户端数据则是从 Google Analytics 服务中收集的。收集和分析服务器日志是观察服务器的一种方式，因此是被动的。
+
+使用 Google Analytics 服务会在网页中注入 JS 部分，从客户端收集数据。它不需要用户额外参与或干预，但会主动向 Google Analytics 服务发送数据。因此，这是一种主动测量。
+
+视点包括服务器端和客户端，它们都是边缘视点。因为服务器端和客户端都处于互联网网络的边缘。
+
+这项工作考虑了多种观点。研究采用了服务器端和客户端测量技术来描述网站访问者的使用行为。在服务器端，研究分析了服务器的使用情况和流量。在客户端，还研究了多种用户行为，如提示、浏览网站的偏好和页面深度等。
+
+本次测量研究进行了离线分析。研究分析了网络服务器上的文件，以研究服务器的性能，而 Google Analytics 则报告了客户端的行为。所有分析都是离线完成的。
+
+测量中使用到的软件工具主要有：访问日志、文件列表、谷歌分析服务、Cookie强化日志、服务器插件。
+\section{网站的复杂性}
+
+\subsection{研究的意义}
+
+\subsection{影响网站性能的因素及其原因}
+
+\chapter{齐普夫定律}
+
+\section{什么是齐普夫定律}
+
+\section{齐普夫定律的数学表示}
+
+\section{齐普夫定律的参数}
+
+\section{从图表中识别齐普夫定律并计算其参数}
+
+\section{齐普夫定律的含义}
+
+\subsection{Facebook Haystack 系统的分布式缓存案例研究}
+
+\subsection{不同缓存级别的内容受欢迎程度如何变化？}
+
+
+\chapter{WiFi干扰效应}
+
+\section{Physical-layer characteristics interferers 物理层特征干扰源}
+
+\subsection{Spectrogram 频谱图}
+
+\subsection{Dutycycle 占空比}
+
+\section{频谱图和占空比如何影响WiFi流量}
+
+\section{基于场景的实验装置分析干扰对数据、视频和语音等各类流量的影响}
+
+\chapter{交通流量}
+
+\section{了解并计算用于研究互联网流量的主机级和流量级的各种指标}
+
+\subsection{Flow size}
+\subsection{Flow duration}
+\subsection{Flow rate}
+\subsection{Transfer volume}
+\subsection{Transfer rate}
+\subsection{Heavy hitters}
+
