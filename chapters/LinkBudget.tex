@@ -8,3 +8,32 @@
 
 \chapter{海底光缆}
 
+\chapter{TCP与拥塞控制}
+
+\section{拥塞窗口}
+
+\subsection{说明慢启动和 AIMD 之间的区别。解释为什么它们的组合对在高 BDP 链路上运行的 TCP 发送机不起作用}
+
+慢启动是TCP连接开始时用来快速增加发送方的发送速率的方法。它的名称“慢启动”有些讽刺，因为增长是指数级的。具体来说：
+
+\begin{itemize}
+	\item 开始时，cwnd从一个较小的值（比如10）开始。
+	\item 对于每个收到的ACK，cwnd增加1，导致每个RTT cwnd翻倍。
+	\item 这个过程一直持续到达到慢启动阈值（ssthresh，可以为连接带宽的一半）或遇到丢包事件。
+\end{itemize}
+
+达到慢启动阈值ssthresh后，或在遇到丢包事件后，TCP使用AIMD来调整cwnd，以避免造成网络拥塞。AIMD的具体规则包括：
+
+\begin{itemize}
+	\item 加法增加：在每个没有丢包的RTT结束后，cwnd只增加一个固定的量（比如1）。
+
+	\item 乘法减少：在检测到丢包事件时，cwnd将以乘法的方式减少，比如减少为原来的0.7或0.5。
+\end{itemize}
+
+
+在具有高带宽延迟乘积（BDP）的链路上，慢启动和AIMD的组合可能并不理想，原因如下：
+
+\begin{itemize}
+	\item AIMD 增长缓慢--在高 BDP 链路上效率低下
+	\item 与拥塞无关的零星损失后过度回退
+\end{itemize}
